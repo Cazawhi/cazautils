@@ -28,6 +28,9 @@ if [ -z "$STR_TESTING" ]
     exit 1
 fi
 
+# Path where config file will be linked in
+PATH_LNCONF="/home/$STR_USER/.config/cazautils.conf"
+
 # Create broadcasts depending on colors 
 PREFIX_NORMAL="${COLOR_BRACKET}[${COLOR_NORMAL}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_CRITICAL="${COLOR_BRACKET}[${COLOR_CRITICAL}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
@@ -85,9 +88,10 @@ echo -e "$PREFIX_PERFECT Initialization finished.";
 #============================================Function===============================================#
 
 # Change the Path to the config file in the other scripts
-#nohup rpl "xerav123" "$PATH_CFG" * >/dev/null 2>&1
-#nohup rpl -f "xerav123" "$PATH_CFG" "$PATH_SOURCE"/*.sh >/dev/null 2>&1 &
-ln -s "$PATH_CFG" /home/$USER/.config/cazautils.conf
+if [ ! -L "$PATH_LNCONF" ]
+  then
+    ln -s "$PATH_CFG" "$PATH_LNCONF"
+fi
 
 # Link all files to VRAM
 ln -s "$PATH_SOURCE"/*.sh "$PATH_VRAM"
