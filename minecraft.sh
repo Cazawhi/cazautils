@@ -64,7 +64,7 @@ case $1 in
      pkill MultiMC
 	   pkill -f "$PATH_MULTIMC"/bin/jars/
 	   notify-send -t 6000 "Minecraft closed."
-     echo "$PREFIX_NORMAL Minecraft closed.";;
+     echo -e "$PREFIX_NORMAL Minecraft closed.";;
    "restart")
      pkill -f "$PATH_MULTIMC"/bin/jars/;;
    *) echo -e "$PREFIX_CRITICAL whoops, syntax: start|stop|restart";;
