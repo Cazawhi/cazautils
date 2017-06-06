@@ -25,3 +25,9 @@ Call it with: minecraft [start,stop,restart]
 *start starts MultiMC
 *stop kills both MultiMC and minecraft client
 *restart kills only client - launcher reopens.
+
+
+**cazadse**
+
+NOT TESTED!
+Documentation will be coming soon
