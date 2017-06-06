@@ -57,7 +57,7 @@ case $1 in
          exit 1
        else
          # on ac
-         nohup optirun -b primus -c yuf "$PATH_MULTIMC"/MultiMC >/dev/null 2>&1 &
+         nohup "$PATH_MULTIMC"/MultiMC >/dev/null 2>&1 &
          exit 0
     fi;;
    "stop")
