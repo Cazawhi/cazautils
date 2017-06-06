@@ -12,7 +12,7 @@
 #============================================Pre-Init===============================================#
 
 # Get cfg-File path
-PATH_CFG="$PATH_SOURCE"/cazautils.conf
+PATH_CFG="/home/$USER/.config/cazautils.conf"
 
 # Read strings from config file
 source "$PATH_CFG"
