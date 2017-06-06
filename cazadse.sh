@@ -12,7 +12,7 @@
 #============================================Pre-Init===============================================#
 
 # Get cfg-File path
-PATH_CFG="/home/$USER/.config/cazautils.conf"
+PATH_CFG="/home/$USER/Software/cazautils/cazautils.conf"
 
 # Read strings from config file
 source "$PATH_CFG"
@@ -38,9 +38,9 @@ echo -e "$PREFIX_NORMAL Starting Cazawhi's distributed script execution "$STR_VE
 echo -e "$PREFIX_NORMAL Starting script-copy.."
 
 # Srv 1
-if [ -n $STR_SRV1 ]
+if [ ! $STR_SRV1 == "EMPTY" ]
   then
-    echo -e "$PREFIX_NORMAL Server $STR_SRV1 found in config. Trying copy..."
+    echo -e "$PREFIX_NORMAL 1 Server $STR_SRV1 found in config. Trying copy..."
     scp "$PATH_SCRIPT" $STR_SRV1:/home/$STR_SRV1USER/cazadse.sh
     if (( $? > 0 ))
       then
@@ -55,9 +55,9 @@ if [ -n $STR_SRV1 ]
 fi
 
 # Srv 2
-if [ -n $STR_SRV2 ]
+if [ ! $STR_SRV2 == "EMPTY" ]
   then
-    echo -e "$PREFIX_NORMAL Server $STR_SRV2 found in config. Trying copy..."
+    echo -e "$PREFIX_NORMAL 2 Server $STR_SRV2 found in config. Trying copy..."
     scp "$PATH_SCRIPT" $STR_SRV2:/home/$STR_SRV2USER/cazadse.sh
     if (( $? > 0 ))
       then
@@ -69,9 +69,9 @@ if [ -n $STR_SRV2 ]
 fi
 
 # Srv 3
-if [ -n $STR_SRV3 ]
+if [ ! $STR_SRV3 == "EMPTY" ]
   then
-    echo -e "$PREFIX_NORMAL Server $STR_SRV3 found in config. Trying copy..."
+    echo -e "$PREFIX_NORMAL 3 Server $STR_SRV3 found in config. Trying copy..."
     scp "$PATH_SCRIPT" $STR_SRV3:/home/$STR_SRV3USER/cazadse.sh
     if (( $? > 0 ))
       then
@@ -83,9 +83,9 @@ if [ -n $STR_SRV3 ]
 fi
 
 # Srv 4
-if [ -n $STR_SRV4 ]
+if [ ! $STR_SRV4 == "EMPTY" ]
   then
-    echo -e "$PREFIX_NORMAL Server $STR_SRV4 found in config. Trying copy..."
+    echo -e "$PREFIX_NORMAL 4 Server $STR_SRV4 found in config. Trying copy..."
     scp "$PATH_SCRIPT" $STR_SRV4:/home/$STR_SRV4USER/cazadse.sh
     if (( $? > 0 ))
       then
@@ -97,9 +97,9 @@ if [ -n $STR_SRV4 ]
 fi
 
 # Srv 5
-if [ -n $STR_SRV5 ]
+if [ ! $STR_SRV5 == "EMPTY" ]
   then
-    echo -e "$PREFIX_NORMAL Server $STR_SRV5 found in config. Trying copy..."
+    echo -e "$PREFIX_NORMAL 5 Server $STR_SRV5 found in config. Trying copy..."
     scp "$PATH_SCRIPT" $STR_SRV5:/home/$STR_SRV5USER/cazadse.sh
     if (( $? > 0 ))
       then
@@ -117,34 +117,32 @@ echo -e "$PREFIX_PERFECT Copying finished."
 echo -e "$PREFIX_NORMAL Starting shells in 5 seconds. Change your Desktop if you want."
 sleep 5
 
-echo -e "$PREFIX_NORMAL Showing job numbers of used shells:"
-
 # Srv 1
-if [ -n $STR_SRV1 ]
+if [ ! $STR_SRV1 == "EMPTY" ]
   then
-    nohup $STR_TERMINAL -e "ssh $STR_SRV1 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup $STR_TERMINAL -hold -e "ssh $STR_SRV1 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 2
-if [ -n $STR_SRV2 ]
+if [ ! $STR_SRV2 == "EMPTY" ]
   then
-    nohup $STR_TERMINAL -e "ssh $STR_SRV2 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup $STR_TERMINAL -hold -e "ssh $STR_SRV2 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 3
-if [ -n $STR_SRV3 ]
+if [ ! $STR_SRV3 == "EMPTY" ]
   then
     nohup $STR_TERMINAL -e "ssh $STR_SRV3 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 4
-if [ -n $STR_SRV4 ]
+if [ ! $STR_SRV4 == "EMPTY" ]
   then
     nohup $STR_TERMINAL -e "ssh $STR_SRV4 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 5
-if [ -n $STR_SRV1 ]
+if [ ! $STR_SRV5 == "EMPTY" ]
   then
     nohup $STR_TERMINAL -e "ssh $STR_SRV5 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
