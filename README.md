@@ -1,4 +1,5 @@
-** Small cazautils configuration **
+cazautils documentation
+=======================
 
 Install:
 -------
@@ -29,5 +30,8 @@ Call it with: minecraft [start,stop,restart]
 
 **cazadse**
 
-NOT TESTED!
-Documentation will be coming soon
+cazadse is a piece of software, that is made to execute a script on all your servers
+at once. Because it could be a script, where you have to enter things, it opens terminal windows for you.
+I use it to update and upgrade everywhere, but the usage can be different.
+You can also let it execute the script locally, if you want.
+How to insert Servers or Scripts is explained in config file.
