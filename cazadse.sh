@@ -24,8 +24,12 @@ if [ -z "$STR_TESTING" ]
     exit 1
 fi
 
-# Counter
-INT_COUNTER=0
+# Check if script exists
+if [ ! -e "$PATH_SCRIPT" ]
+  then
+    echo -e "Cannot find Script to execute! Exiting.."
+    exit 1
+fi
 
 # Create broadcasts depending on colors 
 PREFIX_NORMAL="${COLOR_BRACKET}[${COLOR_NORMAL}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
@@ -116,6 +120,15 @@ echo -e "$PREFIX_PERFECT Copying finished."
 
 echo -e "$PREFIX_NORMAL Starting shells in 5 seconds. Change your Desktop if you want."
 sleep 5
+
+# Local execution
+if [ ! -z "$BOO_LOCALEXEC" ]
+  then
+    if [ "$BOO_LOCALEXEC" == true ]
+      then
+        nohup $STR_TERMINAL -hold -e "bash '$PATH_SCRIPT'" >/dev/null 2>&1 &
+    fi
+fi
 
 # Srv 1
 if [ ! $STR_SRV1 == "EMPTY" ]
