@@ -12,7 +12,7 @@
 #============================================Pre-Init===============================================#
 
 # Get cfg-File path
-PATH_CFG="/home/$USER/Software/cazautils/cazautils.conf"
+PATH_CFG="/home/$USER/.config/cazautils.conf"
 
 # Read strings from config file
 source "$PATH_CFG"
@@ -119,7 +119,7 @@ sleep 5
 
 # Srv 1
 if [ ! $STR_SRV1 == "EMPTY" ]
-  then
+  then 
     nohup $STR_TERMINAL -hold -e "ssh $STR_SRV1 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
