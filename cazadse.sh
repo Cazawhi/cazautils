@@ -31,7 +31,7 @@ if [ ! -e "$PATH_SCRIPT" ]
     exit 1
 fi
 
-# Create broadcasts depending on colors 
+# Create broadcasts depending on colors
 PREFIX_NORMAL="${COLOR_BRACKET}[${COLOR_NORMAL}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_CRITICAL="${COLOR_BRACKET}[${COLOR_CRITICAL}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_PERFECT="${COLOR_BRACKET}[${COLOR_PERFECT}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
@@ -126,20 +126,20 @@ if [ ! -z "$BOO_LOCALEXEC" ]
   then
     if [ "$BOO_LOCALEXEC" == true ]
       then
-        nohup $STR_TERMINAL -hold -e "bash '$PATH_SCRIPT'" >/dev/null 2>&1 &
+        nohup $STR_TERMINAL -e "bash '$PATH_SCRIPT'" >/dev/null 2>&1 &
     fi
 fi
 
 # Srv 1
 if [ ! $STR_SRV1 == "EMPTY" ]
   then 
-    nohup $STR_TERMINAL -hold -e "ssh $STR_SRV1 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup $STR_TERMINAL -e "ssh $STR_SRV1 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 2
 if [ ! $STR_SRV2 == "EMPTY" ]
   then
-    nohup $STR_TERMINAL -hold -e "ssh $STR_SRV2 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup $STR_TERMINAL -e "ssh $STR_SRV2 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 3

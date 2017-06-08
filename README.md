@@ -32,8 +32,11 @@ Call it with: minecraft [start,stop,restart]
 
 **cazadse:**
 
-cazadse (Short form "Cazawhi's distributed script execution") is a piece of software, that is made to execute a script on all your servers
+cazadse (Short form for "Cazawhi's distributed script execution") is a piece of software, that is made to execute a script on all your servers
 at once. Because it could be a script, where you have to enter things, it opens terminal windows for you.
 I use it to update and upgrade everywhere, but the usage can be different.
 You can also let it execute the script locally, if you want.
 How to insert Servers or Scripts is explained in config file.
+You should: Add a sleep interval or a read at the end of the script execution - to see results.
+You should also: Let the script delete itself after execution.
+You should definitly: Finish the script execution with an exit statement - so the shells will definitly close afterwards.
