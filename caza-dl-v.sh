@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #============================================About==================================================#
-# This is a complete rework of the cazamusic-script, implementing some API from yt-dl directly.
+# This is a complete rework of the cazamusic script.
 # If you want so, you can see it as a frontend.
 # Do not execute as root.
-# You can use, share and distribute this freely, as said in the GNU General Public License v3.
-#
-# Project Name: yt-dl frontend - audio edition
+#============================================Information============================================#
 # Author: Cazawhi
+# License: GPLv3
+# Package: cazautils
 #============================================Pre-Init===============================================#
 
 # Path to config file (if /home/cazawhi/Software/Bash-Skripte/cazautils.cfg, DONT touch, execute cazacore instead.)
@@ -22,12 +22,6 @@ if [ -z "$STR_TESTING" ]
     echo -e "Cannot find Config-File! Please change the string in the first few lines of cazacore. Exiting.."
     exit 1
 fi
-
-# Color codes
-COLOR_RED='\033[0;31m'
-COLOR_NC='\033[0m'
-COLOR_GREEN='\033[0;32m'
-COLOR_DGRAY='\033[1;30m'
 
 # Create broadcasts depending on colors 
 PREFIX_NORMAL="${COLOR_BRACKET}[${COLOR_NORMAL}caza-dl${COLOR_BRACKET}]${COLOR_TEXT}"
