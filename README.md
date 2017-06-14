@@ -40,3 +40,9 @@ How to insert Servers or Scripts is explained in config file.
 You should: Add a sleep interval or a read at the end of the script execution - to see results.
 You should also: Let the script delete itself after execution.
 You should definitly: Finish the script execution with an exit statement - so the shells will definitly close afterwards.
+
+**[Incoming] cazacsm:**
+
+Monitoring device activity on remote ssh server and sends emails or push messages
+if a device is active.
+Not ready yet.
