@@ -126,38 +126,38 @@ if [ ! -z "$BOO_LOCALEXEC" ]
   then
     if [ "$BOO_LOCALEXEC" == true ]
       then
-        nohup $STR_TERMINAL -e "bash '$PATH_SCRIPT'" >/dev/null 2>&1 &
+        nohup xterm -e "bash '$PATH_SCRIPT'" >/dev/null 2>&1 &
     fi
 fi
 
 # Srv 1
 if [ ! $STR_SRV1 == "EMPTY" ]
   then 
-    nohup $STR_TERMINAL -e "ssh $STR_SRV1 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup xterm -e "ssh $STR_SRV1 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 2
 if [ ! $STR_SRV2 == "EMPTY" ]
   then
-    nohup $STR_TERMINAL -e "ssh $STR_SRV2 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup xterm -e "ssh $STR_SRV2 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 3
 if [ ! $STR_SRV3 == "EMPTY" ]
   then
-    nohup $STR_TERMINAL -e "ssh $STR_SRV3 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup xterm -e "ssh $STR_SRV3 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 4
 if [ ! $STR_SRV4 == "EMPTY" ]
   then
-    nohup $STR_TERMINAL -e "ssh $STR_SRV4 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup xterm -e "ssh $STR_SRV4 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 # Srv 5
 if [ ! $STR_SRV5 == "EMPTY" ]
   then
-    nohup $STR_TERMINAL -e "ssh $STR_SRV5 'bash cazadse.sh'" >/dev/null 2>&1 &
+    nohup xterm -e "ssh $STR_SRV5 'bash cazadse.sh'" >/dev/null 2>&1 &
 fi
 
 echo -e "$PREFIX_PERFECT Done."
