@@ -10,7 +10,7 @@
 # Package: cazautils
 #============================================Pre-Init===============================================#
 
-# Path to config file (if /home/cazawhi/Software/Bash-Skripte/cazautils.cfg, DONT touch, execute cazacore instead.)
+# Path to config file
 PATH_CFG="/home/$USER/.config/cazautils.conf"
 
 # Read strings from config file

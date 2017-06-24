@@ -2,7 +2,7 @@
 
 #============================================About==================================================#
 # This is a complete rework of the cazamusic script.
-# If you want so, you can see it as a frontend.
+# It downloads youtube-videos and converts to mp3-format.
 # Do not execute as root.
 #============================================Information============================================#
 # Author: Cazawhi
@@ -10,7 +10,7 @@
 # Package: cazautils
 #============================================Pre-Init===============================================#
 
-# Path to config file (if /home/cazawhi/Software/Bash-Skripte/cazautils.cfg, DONT touch, execute cazacore instead.)
+# Path to config file
 PATH_CFG="/home/$USER/.config/cazautils.conf"
 
 # Read strings from config file

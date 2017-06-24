@@ -3,9 +3,7 @@
 #============================================About==================================================#
 # This script is the core of the cazautils package.
 # It is used to link all other scripts to bin, so executing becomes much easier.
-# This file MUST be left in the cazautils directory!
-# The Strings are HARDCODED to fit any situation, exept the cfg file.
-# It is highly recommended to execute this script after every change in the folder.
+# Execute it from the cazautils directory after cloning.
 #============================================Information============================================#
 # Author: Cazawhi
 # License: GPLv3
@@ -31,7 +29,7 @@ fi
 # Path where config file will be linked in
 PATH_LNCONF="/home/$STR_USER/.config/cazautils.conf"
 
-# Create broadcasts depending on colors 
+# Create broadcasts depending on colors
 PREFIX_NORMAL="${COLOR_BRACKET}[${COLOR_NORMAL}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_CRITICAL="${COLOR_BRACKET}[${COLOR_CRITICAL}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_PERFECT="${COLOR_BRACKET}[${COLOR_PERFECT}cazacore${COLOR_BRACKET}]${COLOR_TEXT}"
