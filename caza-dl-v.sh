@@ -11,7 +11,7 @@
 #============================================Pre-Init===============================================#
 
 # Path to config file
-PATH_CFG="/home/$USER/cazautils.conf"
+PATH_CFG="/home/$USER/.config/cazautils.conf"
 
 # Read strings from config file
 source "$PATH_CFG"
@@ -19,7 +19,7 @@ source "$PATH_CFG"
 # Check if Config-File was properly read
 if [ -z "$STR_TESTING" ]
   then
-    echo -e "Cannot find Config-File! Please change the string in the first few lines of cazacore. Exiting.."
+    echo -e "Cannot find Config-File! Exiting.."
     exit 1
 fi
 
@@ -35,7 +35,7 @@ PATH_VRAM="$PATH_RVRAM"/"caza-dl video edition"
 #============================================Init===================================================#
 
 # Printout Init-Message
-echo -e "$PREFIX_NORMAL Initializing caza-dl video editon $VERSION."; 
+echo -e "$PREFIX_NORMAL Initializing caza-dl video editon $STR_VERSION."; 
 
 # Check if destination overwrites cache
 if [ "$2" == "$PATH_VRAM" ]
