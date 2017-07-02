@@ -1,9 +1,7 @@
 #!/bin/bash
 
 #============================================About==================================================#
-# This is a complete rework of the cazamusic script.
-# It downloads youtube videos.
-# No need to execute as root.
+# Youtube-Video download script, frontending yt-dl.
 #============================================Information============================================#
 # Author: Cazawhi
 # License: GPLv3
@@ -23,7 +21,7 @@ if [ -z "$STR_TESTING" ]
     exit 1
 fi
 
-# Create broadcasts depending on colors 
+# Create broadcasts depending on colors
 PREFIX_NORMAL="${COLOR_BRACKET}[${COLOR_NORMAL}caza-dl${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_CRITICAL="${COLOR_BRACKET}[${COLOR_CRITICAL}caza-dl${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_PERFECT="${COLOR_BRACKET}[${COLOR_PERFECT}caza-dl${COLOR_BRACKET}]${COLOR_TEXT}"
@@ -35,7 +33,7 @@ PATH_VRAM="$PATH_RVRAM"/"caza-dl video edition"
 #============================================Init===================================================#
 
 # Printout Init-Message
-echo -e "$PREFIX_NORMAL Initializing caza-dl video editon $STR_VERSION."; 
+echo -e "$PREFIX_NORMAL Initializing caza-dl video editon $STR_VERSION.";
 
 # Check if destination overwrites cache
 if [ "$2" == "$PATH_VRAM" ]
@@ -115,7 +113,7 @@ if [ -z $3 ]
         read READ_PLS
         echo -e "$PREFIX_NORMAL Define playlist end video:";
         read READ_PLE
-        
+
         # Strings must contain only numbers
         if [[ $READ_PLS =~ [^[:digit:]] ]] && [[ $READ_PLS =~ [^[:digit:]] ]]
           then

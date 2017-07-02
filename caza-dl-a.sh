@@ -1,9 +1,7 @@
 #!/bin/bash
 
 #============================================About==================================================#
-# This is a complete rework of the cazamusic script.
-# It downloads youtube-videos and converts to mp3-format.
-# Do not execute as root.
+# This is a youtube download script, that is used to frontend yt-dl and fix some bugs in there.
 #============================================Information============================================#
 # Author: Cazawhi
 # License: GPLv3
@@ -19,11 +17,11 @@ source "$PATH_CFG"
 # Check if Config-File was properly read
 if [ -z "$STR_TESTING" ]
   then
-    echo -e "Cannot find Config-File! Please execute cazacore once before using the other scripts. Exiting.."
+    echo -e "Cannot find Config-File! Exiting.."
     exit 1
 fi
 
-# Create broadcasts depending on colors 
+# Create broadcasts depending on colors
 PREFIX_NORMAL="${COLOR_BRACKET}[${COLOR_NORMAL}caza-dl${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_CRITICAL="${COLOR_BRACKET}[${COLOR_CRITICAL}caza-dl${COLOR_BRACKET}]${COLOR_TEXT}"
 PREFIX_PERFECT="${COLOR_BRACKET}[${COLOR_PERFECT}caza-dl${COLOR_BRACKET}]${COLOR_TEXT}"
@@ -34,7 +32,7 @@ PATH_VRAM="$PATH_RVRAM"/"caza-dl audio edition"
 #============================================Init===================================================#
 
 # Printout Init-Message
-echo -e "$PREFIX_NORMAL Initializing caza-dl audio edition $STR_VERSION."; 
+echo -e "$PREFIX_NORMAL Initializing caza-dl audio edition $STR_VERSION.";
 
 # Check if destination overwrites cache
 if [ "$2" == "$PATH_VRAM" ]
@@ -106,7 +104,7 @@ echo -e "$PREFIX_NORMAL Initialization finished.";
 if [ -z $3 ]
   then
     echo -e "$PREFIX_NORMAL Starting the download.";
-    "$PATH_YTDL" -i --extract-audio --audio-format mp3 --audio-quality 0 --socket-timeout 30 --console-title --no-playlist "$1" > "$PATH_LOGFILE" 2>&1
+    "$PATH_YTDL" -i --extract-audio --audio-format mp3 --audio-quality 0 --socket-timeout 30 --console-title --no-playlist "$1" > "$PATH_LOGFILE" 2>&1 
   else
     if [ $3 == "playlist" ]
       then
@@ -114,7 +112,7 @@ if [ -z $3 ]
         read READ_PLS
         echo -e "$PREFIX_NORMAL Define playlist end video:";
         read READ_PLE
- 
+
         # Strings must contain only numbers
         if [[ $READ_PLS =~ [^[:digit:]] ]] && [[ $READ_PLS =~ [^[:digit:]] ]]
           then

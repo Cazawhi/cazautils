@@ -20,7 +20,7 @@ source "$PATH_CFG"
 # Check if Config-File was properly read
 if [ -z "$STR_TESTING" ]
   then
-    echo -e "Cannot find Config-File! Please change the string in the first few lines of cazacore. Exiting.."
+    echo -e "Cannot find Config-File! Exiting.."
     exit 1
 fi
 
