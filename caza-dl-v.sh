@@ -104,7 +104,7 @@ echo -e "$PREFIX_NORMAL Initialization finished.";
 # If Playlist is wanted ask for start/end and download silently
 if [ -z $3 ]
   then
-    echo -e "$PREFIX_NORMAL Starting the download.";
+    echo -e "$PREFIX_NORMAL Downloading.";
     "$PATH_YTDL" -i --socket-timeout 30 --console-title --no-playlist "$1" > "$PATH_LOGFILE" 2>&1
   else  
     if [ $3 == "playlist" ]
@@ -124,7 +124,7 @@ if [ -z $3 ]
             exit 1
           else
             NEW_PLE=`echo "$(($READ_PLE+1))"`
-            echo -e "$PREFIX_NORMAL Starting playlist download.";
+            echo -e "$PREFIX_NORMAL Downloading..";
             "$PATH_YTDL" -i --console-title --yes-playlist --playlist-start "$READ_PLS" --playlist-end "$NEW_PLE" "$1" > "$PATH_LOGFILE" 2>&1
         fi
       else
@@ -158,7 +158,7 @@ if [ ! -n "$(ls -A "$PATH_VRAM")" ]
 fi
 
 # Remove last 16 chars of files and add ending .mp4
-rename 's/.{16}$//' *
+rename 's/.{17}$//' *
 sleep 3
 for f in *; do mv "$f" "$f.mp4"; done
 

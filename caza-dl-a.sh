@@ -157,7 +157,7 @@ if [ ! -n "$(ls -A "$PATH_VRAM")" ]
 fi
 
 # Remove last 16 chars of files and add ending .mp3
-rename 's/.{16}$//' *
+rename 's/.{17}$//' *
 for f in *; do mv "$f" "$f.mp3"; done
 
 # Create Destination Folder if not existing
@@ -176,7 +176,7 @@ if [ -d "$2" ]
     nohup easytag "$2" >/dev/null 2>&1 &
     exit 0
   else
-    echo -e "$PREFIX_CRITICAL Can't reach the target directory! The files will remain in VRAM. Clean VRAM before using caza-dl again.";
+    echo -e "$PREFIX_CRITICAL Target directory unavailable. Falling back to rescue mode: VRAM will not be deleted.";
     echo -e "$PREFIX_NORMAL It's over.";
     cd
     exit 1
